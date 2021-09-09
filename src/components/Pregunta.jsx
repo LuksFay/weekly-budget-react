@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Error from './Error';
 // import PropTypes from 'prop-types';
 
-const Pregunta = () => {
+const Pregunta = ({guardarPresupuesto, guardarRestante, actualizarPregunta}) => {
 
     //Definir el state
     const [cantidad, guardarCantidad] = useState(0);
@@ -21,6 +21,9 @@ const Pregunta = () => {
         }
     //si pasa la validacion
     guardarError(false);
+    guardarPresupuesto(cantidad);
+    guardarRestante(cantidad);
+    actualizarPregunta(false)
     }
     return (
     <>
